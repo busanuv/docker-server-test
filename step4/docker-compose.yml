@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  mysql:
+    container_name: mysql_server
+    image: mysql/mysql-server:latest
+    environment:
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_USER: "ssar"
+      MYSQL_PASSWORD: "ssar1234"
+      MYSQL_DATABASE: "blog"
+    ports:
+      - "3306:3306"
+    command:
+      - "mysqld"
+      - "--character-set-server=utf8mb4"
+      - "--collation-server=utf8mb4_unicode_ci"

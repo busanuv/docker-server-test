@@ -1,0 +1,11 @@
+FROM ubuntu
+
+RUN apt-get update
+RUN apt-get install -y mariadb-server
+
+COPY my.cnf /etc/mysql/
+ADD  init.sql /docker-entrypoint-initdb.d
+
+
+ENTRYPOINT ["mysqld"]
+EXPOSE 3306
