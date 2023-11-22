@@ -1,3 +1,5 @@
+use blogdb;
+
 CREATE TABLE IF NOT EXISTS user_tb (
     id integer auto_increment,
     created_at timestamp,

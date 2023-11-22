@@ -1,1 +1,0 @@
-docker build -t step1 . && docker run -p 8080:8080 -it step1 
