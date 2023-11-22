@@ -1,11 +1,12 @@
-FROM ubuntu
+FROM mysql
 
-RUN apt-get update
-RUN apt-get install -y mariadb-server
+ENV MYSQL_USER=ssar
+ENV MYSQL_PASSWORD=ssar1234
+ENV MYSQL_ROOT_PASSWORD=root1234
+ENV MYSQL_DATABASE=blogdb
 
-COPY my.cnf /etc/mysql/
-ADD  init.sql /docker-entrypoint-initdb.d
+ADD init.sql /docker-entrypoint-initdb.d
 
-
-ENTRYPOINT ["mysqld"]
 EXPOSE 3306
+
+CMD ["mysqld"]

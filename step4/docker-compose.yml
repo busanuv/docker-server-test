@@ -1,8 +1,8 @@
 version: '3'
 
 services:
-  mysql:
-    container_name: mysql_server
+  step4_mysql:
+    container_name: step4_mysql
     image: mysql/mysql-server:latest
     environment:
       MYSQL_ROOT_HOST: '%'
@@ -11,6 +11,20 @@ services:
       MYSQL_DATABASE: "blog"
     ports:
       - "3306:3306"
+    command:
+      - "mysqld"
+      - "--character-set-server=utf8mb4"
+      - "--collation-server=utf8mb4_unicode_ci"
+  step4_backend:
+    container_name: step4_backend
+    image: openjdk/11-jdk-slim
+    environment:
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_USER: "ssar"
+      MYSQL_PASSWORD: "ssar1234"
+      MYSQL_DATABASE: "blog"
+    ports:
+      - "8080:8080"
     command:
       - "mysqld"
       - "--character-set-server=utf8mb4"
