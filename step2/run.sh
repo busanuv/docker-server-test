@@ -1,6 +1,1 @@
-git clone https://github.com/busanuv/blog-user-step14.git
-cd blog-user-step14
-chmod +x gradlew
-./gradlew build
-# java -jar $(echo $(ls build/libs| grep 'SNAPSHOT.jar'))
-java -jar $(echo build/libs/*.jar)
+docker build -t step2 . && docker run -p 8080:8080 -p 3306:3306 -it step2
