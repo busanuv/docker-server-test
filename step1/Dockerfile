@@ -1,8 +1,6 @@
 FROM ubuntu
 
-RUN apt-get update
-RUN apt-get install -y git
-RUN apt-get install -y openjdk-11-jdk
+RUN apt-get update && apt-get install -y git openjdk-11-jdk
 
 WORKDIR /home/ubuntu/
 

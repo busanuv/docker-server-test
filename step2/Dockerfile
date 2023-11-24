@@ -1,9 +1,6 @@
 FROM ubuntu
 
-RUN apt-get update
-RUN apt-get install -y git
-RUN apt-get install -y openjdk-11-jdk
-RUN apt-get install -y mysql-server
+RUN apt-get update && apt-get install -y git openjdk-11-jdk mysql-server
 
 ENV RDS_HOSTNAME=localhost
 ENV RDS_PORT=3306
